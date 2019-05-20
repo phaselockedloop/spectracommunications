@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Communications Spectra</title>
+  <meta name="description" content="Communications Spectra" />
+  <meta name="author" content="Communications Spectra" />
+  <meta name="viewport" content="width=device-width, initial-scale=2.0" />
+  <link rel="stylesheet" type="text/css" href="../css/main.css" />
+  <link href="http://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css" />
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<div style="padding-bottom: 22px">
+  <img src="../img/stripe.png" style="z-index: 1" />
+  <div class="lightbox">
+    <a href="../fr/services.html"> <img src="../img/fr.png" class="fr" onmouseover="this.src='../img/fr_hover.png'"
+        onmouseout="this.src='../img/fr.png'" /></a>
+    <a href="../en/services.html"> <img src="../img/en.png" class="en" onmouseover="this.src='../img/en_hover.png'"
+        onmouseout="this.src='../img/en.png'" /></a>
+  </div>
+</div>
+<div class="header_container">
+  <a href="../fr/index.html"><img src="../img/fr/main_logo.jpg" style="float: left; margin-top:20px;" /></a>
+  <div class="social_media">
+    <a href="https://www.facebook.com/spectraMTL" /><img src="../img/facebook.png"
+      onmouseover="this.src='../img/facebook_hover.png'" onmouseout="this.src='../img/facebook.png'" /></a>
+    <a href="https://www.linkedin.com/company/5298919?trk=prof-exp-company-name" /><img src="../img/linked_in.png"
+      style="padding-left: 10px" onmouseover="this.src='../img/linked_in_hover.png'"
+      onmouseout="this.src='../img/linked_in.png'" /></a>
+  </div>
+  <div class="link_box_fr">
+    <a href="../fr/index.html"><img src="../img/fr/home.png" style="padding-right: 30px; padding-left: 30px"
+        onmouseover="this.src='../img/fr/home_hover.png'" onmouseout="this.src='../img/fr/home.png'" /></a>
+    <a href="../fr/about.html"><img src="../img/fr/about.png" style="padding-right: 30px"
+        onmouseover="this.src='../img/fr/about_hover.png'" onmouseout="this.src='../img/fr/about.png'" /></a>
+    <a href="../fr/services.html"> <img src="../img/fr/services.png" style="padding-right: 30px"
+        onmouseover="this.src='../img/fr/services_hover.png'" onmouseout="this.src='../img/fr/services.png'" /></a>
+    <a href="../fr/contact.html"><img src="../img/fr/contact.png" style="padding-right: 30px"
+        onmouseover="this.src='../img/fr/contact_hover.png'" onmouseout="this.src='../img/fr/contact.png'" /></a>
+  </div>
+</div>
+
+<script>
+  function clearForm() {
+    var email = document.getElementById("email");
+    var name = document.getElementById("name");
+    var conf = document.getElementById("confirm_email");
+    var message = document.getElementById("message");
+    var error_box = document.getElementById("error_box");
+
+    var regular_border = "1px solid #d3d3d3";
+
+    email.style.border = regular_border;
+    name.style.border = regular_border;
+    conf.style.border = regular_border;
+    message.style.border = regular_border
+    error_box.innerHTML = "OK";
+    error_box.style.visibility = "hidden";
+  }
+
+  function validate() {
+
+    var error_border = "1px solid #f15b5a";
+    var email = document.getElementById("email");
+    var error_box = document.getElementById("error_box");
+
+    if (email.value == "") {
+      error_box.innerHTML = "Please enter your email.";
+      email.style.border = error_border;
+      error_box.style.visibility = "visible";
+      return false;
+    }
+
+    var atpos = email.value.indexOf("@");
+    var dotpos = email.value.lastIndexOf(".");
+    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.value.length) {
+      error_box.innerHTML = "Please enter a valid email address.";
+      email.style.border = error_border;
+      error_box.style.visibility = "visible";
+      return false;
+    }
+
+    var name = document.getElementById("name");
+    if (name.value == "") {
+      error_box.innerHTML = "Please enter your name.";
+      name.style.border = error_border;
+      error_box.style.visibility = "visible";
+      return false;
+    }
+
+    var conf = document.getElementById("confirm_email");
+    if (conf.value == "") {
+      error_box.innerHTML = "Please confirm your email.";
+      conf.style.border = error_border;
+      error_box.style.visibility = "visible";
+      return false;
+    }
+
+    var message = document.getElementById("message");
+    if (message.value == "") {
+      error_box.innerHTML = "Please enter a message.";
+      message.style.border = error_border;
+      error_box.style.visibility = "visible";
+      return false;
+    }
+
+    if (email.value != conf.value) {
+      error_box.innerHTML = "Email does not match confirmation";
+      email.style.border = error_border;
+      error_box.style.visibility = "visible";
+      confirm.style.border = error_border;
+    }
+
+    document.getElementById('form').submit();
+  }
+
+</script>
+<div id="about_title" class="standard_font" style="width: 600px">COMMUNIQUEZ AVEC NOUS POUR OBTENIR UN DEVIS GRATUIT!
+</div>
+<form name="contact" method="post" data-netlify="true" action="pages/success.html" id="form">
+  <div id="about_wrap" style="margin-bottom: 0px; margin-left: 150px">
+    <div id="about" class="standard_font" style="color:#606060; font-weight:400; font-size:18px;">
+      <table class="contact_form">
+        <tr>
+          <td style="width: 250px">Nom* :</td>
+          <td><input type="text" onfocus="clearForm()" name="name" class="standard_font formBorder" id="name"
+              value="" /></td>
+        </tr>
+        <tr>
+          <td>Objet :</td>
+          <td><input type="text" onfocus="clearForm()" name="subject" class="standard_font formBorder" id="subject"
+              value="" /></td>
+        </tr>
+        <tr>
+          <td>Adresse de courriel*:</td>
+          <td><input type="text" onfocus="clearForm()" name="email" class="standard_font formBorder" id="email"
+              value="" /></td>
+        </tr>
+        <tr>
+          <td>Confirmer l'adresse de courriel* :</td>
+          <td><input type="text" onfocus="clearForm()" name="confirm_email" class="standard_font formBorder"
+              id="confirm_email"/ value=""></td>
+        </tr>
+        <tr>
+          <td>Message*:</td>
+          <td><textarea onfocus="clearForm()" type="text" name="message" class="standard_font formBorder"
+              style="height: 300px; width: 350px" id="message"></textarea></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="phone">
+    <a href="mailto:info@communicationsspectra.ca" /><img src="../img/fr/phone.png" /></a>
+  </div>
+  <div id="clear" />
+  <div class="error_box standard_font" id="error_box" style="color: f15b5a; visibility: hidden">OK</div>
+  <table style="margin-left: 250px;">
+    <tr>
+      <td>
+        <script type="text/javascript">
+          var RecaptchaOptions = {
+            lang: 'fr',
+            theme: 'clean'
+          };
+        </script>
+        <div class="g-recaptcha" data-sitekey="6LeYMH0UAAAAAL3M4AfkjLKnNaX0aNP9DmkdW1UK" </td> <td>
+          <div class="submit_right standard_font cool_button"
+            style="background-color:#49ba6f; text-align: center; padding-top: 10px">
+            <a href="#" onclick="clearForm();validate()" class="submit standard_font">SOUMETTRE</a>
+          </div>
+      </td>
+      <td>
+        <div class="submit_right standard_font cool_button"
+          style="background-color:#babbbc; text-align: center; padding-top: 10px">
+          <a href="#" onclick="clearForm(); document.getElementById('form').reset()"
+            class="submit standard_font">RÉINITIALISER</a>
+        </div>
+      </td>
+    </tr>
+  </table>
+</form>
+<div id="clear">
+  <div style="width:100%; border-top: 1px solid #c5c6c8; margin-top:30px;" />
+  <div class="generic_text standard_font" style="color:#606060; font-weight:400; font-size:16px">
+
+    Vous souhaitez percer les marchés québécois, canadien et américain afin d’assurer la croissance de votre
+    entreprise?<br /><br />
+
+
+    Laissez Communications Spectra franchir les obstacles langagiers pour vous.<br />
+    <a href='../fr/services.html'>Cliquer ici</a> pour en savoir plus.
+
+  </div>
+  <br /><br />
+  <div style="width:100%; border-top: 1px solid #d1d1d3;" />
+  <div id="clear">
+    <div style="font-weight:300;float:left; padding-top: 20px; padding-left:150px; color:#4A4A4A" class="standard_font">
+      &copy;Communications Spectra, 2016.<br /> Tous droits réservés.
+    </div>
+    <div style="font-weight:300; float:right; padding-top:20px; padding-right:140px; color:#4A4A4A" class="standard_font">
+      Communiquer en toute simplicité.
+    </div>
+  </div>
+  </body>
+
+</html>
