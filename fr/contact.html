@@ -118,7 +118,7 @@
 </script>
 <div id="about_title" class="standard_font" style="width: 600px">COMMUNIQUEZ AVEC NOUS POUR OBTENIR UN DEVIS GRATUIT!
 </div>
-<form name="contact" method="post" data-netlify="true" action="pages/success.html" id="form">
+<form name="contact" method="post" data-netlify-recaptcha="true" data-netlify="true" id="form">
   <div id="about_wrap" style="margin-bottom: 0px; margin-left: 150px">
     <div id="about" class="standard_font" style="color:#606060; font-weight:400; font-size:18px;">
       <table class="contact_form">
@@ -158,21 +158,15 @@
   <table style="margin-left: 250px;">
     <tr>
       <td>
-        <script type="text/javascript">
-          var RecaptchaOptions = {
-            lang: 'fr',
-            theme: 'clean'
-          };
-        </script>
-        <div class="g-recaptcha" data-sitekey="6LeYMH0UAAAAAL3M4AfkjLKnNaX0aNP9DmkdW1UK" </td> <td>
-          <div class="submit_right standard_font cool_button"
-            style="background-color:#49ba6f; text-align: center; padding-top: 10px">
-            <a href="#" onclick="clearForm();validate()" class="submit standard_font">SOUMETTRE</a>
-          </div>
+        <div data-netlify-recaptcha="true"></div>
       </td>
       <td>
-        <div class="submit_right standard_font cool_button"
-          style="background-color:#babbbc; text-align: center; padding-top: 10px">
+        <div class="submit_right standard_font cool_button" style="background-color:#49ba6f; text-align: center; padding-top: 10px">
+          <a href="#" onclick="clearForm();validate()" class="submit standard_font">SOUMETTRE</a>
+        </div>
+      </td>
+      <td>
+        <div class="submit_right standard_font cool_button" style="background-color:#babbbc; text-align: center; padding-top: 10px">
           <a href="#" onclick="clearForm(); document.getElementById('form').reset()"
             class="submit standard_font">RÉINITIALISER</a>
         </div>
