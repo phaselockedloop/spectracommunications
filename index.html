@@ -1,12 +1,12 @@
 <html>
     <head>
         <script type="text/javascript">
-            if (window.location == "spectracommunications.ca") {
-                window.location.href = "https://spectracommunications.ca/en/index.html";
-            } else if (window.location == "communicationsspectra.ca") {
-                window.location.href = "https://communicationsspectra.ca/fr/index.html";
-            } else if (window.location == "communicationsspectra.com") {
-                window.location.href = "https://communicationsspectra.com/fr/index.html";
+            if (window.location.toString().includes("spectracommunications.ca")) {
+                window.location.href = "https://spectracommunications.ca/en/";
+            } else if (window.location.toString().includes("communicationsspectra.ca")) {
+                window.location.href = "https://communicationsspectra.ca/fr/";
+            } else if (window.location.toString().includes("communicationsspectra.com")) {
+                window.location.href = "https://communicationsspectra.com/fr/";
             } else {
                 window.location.href = window.location.origin + "/en/index.html"
             }
